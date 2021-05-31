@@ -1,0 +1,236 @@
+@font-face {
+  font-family: "gilroy";
+  font-weight: 200;
+  src: local("gilroy"), url(../fonts/Gilroy-Light.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "gilroy";
+  font-weight: 600;
+  src: local("gilroy"), url(../fonts/Gilroy-ExtraBold.otf) format("truetype");
+}
+
+$color-orange: #ff6000;
+$stroke: #ffffff78;
+
+* {
+  font-family: "gilroy";
+  font-weight: 200;
+}
+
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  // height: 100%;
+  // -webkit-overflow-scrolling: touch;
+  // overflow-scrolling: touch;
+  // font-family: "Signika Negative", sans-serif, Arial;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.navbar {
+  position: fixed;
+}
+
+.panel {
+  width: 100vw;
+  height: 100vh;
+  //   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.5em;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+  .sec-wrapper {
+    max-width: 1600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  //   overflow-y: scroll;
+
+  > div {
+    height: 100%;
+    > div {
+      height: 100%;
+      > div {
+        height: 100%;
+        > div {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.sec-1 {
+  background: black;
+  .sec-wrapper-1 {
+    // mix-blend-mode: multiply;
+    text-align: left;
+    display: flex;
+    .title-wrapper {
+      font-size: 35px;
+      margin-top: -200px;
+      h2 {
+        padding-left: 55px;
+        font-size: 60px;
+      }
+      h3 {
+        // color: $color-orange;
+        // font-weight: 600;
+        // background: linear-gradient(
+        //   113deg
+        //   , transparent 20%, white 60%, transparent 90%);
+        //   position: relative;
+        //   padding: 25px 0px;
+        color: #ff6000;
+        font-weight: 600;
+        background: linear-gradient(128deg, #000000d4 55%, transparent 43%);
+        position: relative;
+        padding: 25px 0px;
+        padding-left: 55px;
+        // &::before {
+        //   content: "";
+        //   position: absolute;
+        //   width: calc(100% - 300px);
+        //   height: 100%;
+        //   border-top: 3px solid #ff6000;
+        //   border-left: 100px solid transparent;
+        //   border-right: 100px solid transparent;
+        //   left: 50%;
+        //   transform: translate(-50%, 0);
+        // }
+        // &::after {
+        //   content: "";
+        //   position: absolute;
+        //   width: calc(100% - 800px);
+        //   height: 100%;
+        //   border-bottom: 3px solid #ff6000;
+        //   border-left: 100px solid transparent;
+        //   border-right: 100px solid transparent;
+        //   left: 50%;
+        //   top: -15px;
+        //   transform: translate(-50%, 0);
+        // }
+      }
+    }
+    .sec-1-desc {
+      max-width: 800px;
+      text-align: left;
+      justify-self: end;
+      align-self: baseline;
+      margin-right: 150px;
+      position: relative;
+      p {
+        font-size: 25px;
+        line-height: 30px;
+        font-weight: 600;
+        color: #2b2b2b;
+        position: relative;
+        text-shadow: -1px -1px 0 $stroke, 0 -1px 0 $stroke, 1px -1px 0 $stroke,
+          1px 0 0 $stroke, 1px 1px 0 $stroke, 0 1px 0 $stroke,
+          -1px 1px 0 $stroke, -1px 0 0 $stroke;
+      }
+    }
+  }
+  .moon-bg {
+    background: url("/img/moonstruck/moon/moon-light2.png");
+    z-index: 1;
+  }
+  .moon-bg2 {
+    background: url("/img/moonstruck/moon/moon-dark.png");
+    z-index: 2;
+  }
+}
+
+// .sec-2 {
+//     .moon-bg {
+//       background: url("/img/moonstruck/moon/moon-dark.png");
+//     }
+//   }
+
+.sec-3 {
+  background: black;
+  position: relative;
+  display: flex;
+  &::after {
+    content: "";
+    position: absolute;
+    background: url("/img/elements/orange-gradient.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: 100%;
+    width: 100%;
+    height: 100%;
+    max-width: 1795px;
+    max-height: 292px;
+    bottom: 0%;
+    display: flex;
+    right: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+.sec-1,
+.sec-2,
+.sec-3 {
+  .moon-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    // transform: scale(1.1);
+  }
+
+  .moon-bg2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    // transform: scale(1.1);
+  }
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  > div {
+    > div {
+      span {
+        background: red !important;
+      }
+    }
+  }
+}

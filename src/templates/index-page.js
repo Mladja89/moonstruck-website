@@ -1,137 +1,149 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import React, { useRef, useEffect } from "react";
+import PropTypes from "prop-types";
+import { Link, graphql } from "gatsby";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Tabs from "../components/tabs/tabs"
 
-import Layout from '../components/Layout'
-import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
-
-export const IndexPageTemplate = ({
-  image,
-  title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro,
-}) => (
-  <div>
-    <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
-      }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
-        }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {subheading}
-        </h3>
-      </div>
-    </div>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
-                  </div>
-                </div>
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
-                  </h3>
-                  <BlogRoll />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
-                      Read more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-)
-
-IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
-}
+import Layout from "../components/Layout";
+import Features from "../components/Features";
+import BlogRoll from "../components/BlogRoll";
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+
+  const { frontmatter } = data.markdownRemark;
+  gsap.registerPlugin(ScrollTrigger);
+
+  const refSlide1 = useRef(null);
+  const refSlide2 = useRef(null);
+  const refSlide3 = useRef(null);
+
+  useEffect(() => {
+    const sections = [refSlide1, refSlide2, refSlide3].map(
+      (ref) => ref.current
+    );
+    sections.forEach((panel, i) => {
+      ScrollTrigger.create({
+        trigger: panel,
+        start: "top top",
+        markers: false,
+        pin: true,
+        pinSpacing: false,
+        scrub: true,
+      });
+    });
+
+    ScrollTrigger.create({
+      // snap: 1 / (sections.length - 1)
+      snap: {
+        snapTo: 1 / (sections.length - 1),
+        duration: { min: 0, max: 1 },
+        delay: 0,
+        ease: "power2.inOut",
+        inertia: true,
+      },
+    });
+
+    const element = refSlide1.current;
+    gsap.fromTo(
+      element.querySelector(".moon-bg"),
+      {
+        opacity: 1,
+        backgroundPositionY: "50%",
+      },
+      {
+        opacity: 0,
+        backgroundPositionY: "100%",
+        scrollTrigger: {
+          trigger: element.querySelector(".sec-1"),
+          start: "top top",
+          end: "center center",
+          scrub: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      element.querySelector(".moon-bg2"),
+      {
+        opacity: 0,
+        backgroundPositionY: "50%",
+      },
+      {
+        opacity: 1,
+        backgroundPositionY: "100%",
+        scrollTrigger: {
+          trigger: element.querySelector(".sec-1"),
+          start: "top top",
+          end: "center center",
+          markers: false,
+          scrub: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      element.querySelector(".sec-wrapper-1"),
+      {
+        opacity: 1,
+        y: 0,
+      },
+      {
+        opacity: 0,
+        y: -800,
+        scrollTrigger: {
+          trigger: element.querySelector(".sec-1"),
+          // duration: { min: 0, max: 0.1 },
+          start: "top top",
+          end: "center center",
+          markers: false,
+          scrub: true,
+        },
+      }
+    );
+  }, [refSlide1, refSlide2, refSlide3]);
 
   return (
     <Layout>
-      <IndexPageTemplate
+      <section className="panel sec-1" ref={refSlide1}>
+        <div className="sec-wrapper sec-wrapper-1">
+          <div className="title-wrapper">
+            <h2>Simply functional</h2>
+            <h3>
+              Taking on the challenges and complexity <br></br> of your idea, we simplify
+              your equation<br></br> and make it work, simply, functional.
+            </h3>
+          </div>
+          <div className="sec-1-desc">
+
+            <p>
+              We provide full cycle software development from idea and
+              design to <br></br> support and maintenance. Based on your needs we can
+              deliver <br></br> new products, and help you to re-engineer and upgrade <br></br>
+              existing products or services.
+            </p>
+          </div>
+        </div>
+        <div className="moon-bg"></div>
+        <div className="moon-bg2"></div>
+      </section>
+      <section className="panel sec-2" ref={refSlide2}>
+        <div className="sec-wrapper">
+          <div className="title-wrapper">
+            <h2><span>what we do </span> services</h2>
+          </div>
+          <div className="whatwedo">
+            <Tabs></Tabs>
+          </div>
+          <div></div>
+        </div>
+        <div className="moon-bg"></div>
+      </section>
+      <section className="panel sec-3" ref={refSlide3}>
+        <div className="sec-wrapper sec-wrapper-3"></div>
+      </section>
+
+      {/* <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
@@ -139,10 +151,10 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
-      />
+      /> */}
     </Layout>
-  )
-}
+  );
+};
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
@@ -150,9 +162,9 @@ IndexPage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-}
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
@@ -190,4 +202,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
