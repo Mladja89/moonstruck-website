@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef, useEffect} from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
@@ -8,8 +8,23 @@ import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 import Headroom from "react-headroom";
 
-const TemplateWrapper = ({ children }) => {
+const TemplateWrapper = ({ children, scrollTriggerAction }) => {
   const { title, description } = useSiteMetadata()
+  const headroomF = useRef(null);
+  window.headd = headroomF.current
+  // console.log('test333', scrollTriggerAction);
+  // headroomF.current.disable()
+  const Perform = (direction) => {
+    console.log(direction);
+    if (typeof headroomF != "undefined" && headroomF.current.state.state === "unpinned") {
+      headroomF.current.pin()
+    }
+  }
+
+  // useEffect(() => {
+  //   Perform(scrollTriggerAction) to be made later
+  // }, [scrollTriggerAction]);
+
   return (
     <div>
       <Helmet>
@@ -52,7 +67,7 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       {/* <Navbar /> */}
       <header>
-      <Headroom>
+      <Headroom ref={headroomF} disable >
         <span>1</span>
         <span>1</span>
         <span>1</span>

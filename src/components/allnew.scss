@@ -165,16 +165,171 @@ body {
   }
 }
 
-// .sec-2 {
-//     .moon-bg {
-//       background: url("/img/moonstruck/moon/moon-dark.png");
-//     }
-//   }
+.sec-2 {
+  > .sec-wrapper {
+    display: flex;
+    align-self: baseline;
+    margin-top: 100px;
+    height: 100%;
+    .title-wrapper {
+      display: flex;
+      h2 {
+        font-weight: 600;
+        color: white;
+        span {
+          font-weight: 600;
+          color: $color-orange;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 100px;
+            background: $color-orange;
+            top: -10px;
+          }
+        }
+      }
+    }
+    .whatwedo {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      .tabs-wrapper {
+        display: flex;
+        // position: relative;
+        ul {
+          padding: 0;
+          margin: 0;
+          padding-left: 50px;
+          li {
+            list-style: none;
+            padding: 40px 0px;
+            font-size: 40px;
+            text-align: left;
+            .active {
+              color: $color-orange;
+            }
+            span {
+              color: white;
+              font-weight: 600;
+              transition: all 0.19s ease-in-out;
+              cursor: pointer;
+              &:hover {
+                color: $color-orange;
+                transition: all 0.19s ease-in-out;
+              }
+            }
+          }
+        }
+        .stripe-wrapper {
+          .stripe-container {
+            .stripe-item {
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 .sec-3 {
   background: black;
   position: relative;
   display: flex;
+  > .sec-wrapper-3 {
+    color: white;
+    .title-wrapper {
+      display: flex;
+      flex-direction: column;
+      h2 {
+        font-weight: 600;
+        color: white;
+        display: flex;
+        margin-bottom: 5px;
+        span {
+          font-weight: 600;
+          color: $color-orange;
+          position: relative;
+          padding-right: 10px;
+          &::before {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 100px;
+            background: $color-orange;
+            top: -10px;
+          }
+        }
+      }
+      h6 {
+        margin-top: 10px;
+        font-size: 25px;
+        text-align: left;
+        letter-spacing: 1px;
+      }
+    }
+    .features-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      .feature-item {
+        display: flex;
+        flex-direction: column;
+        margin: 0px 25px;
+        align-items: baseline;
+        min-width: 200px;
+        span {
+          font-size: 50px;
+        }
+        ul {
+          list-style: none;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: baseline;
+          li {
+            color: $color-orange;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .approach-wrapper {
+      margin-top: 30px;
+      h2 {
+        font-weight: 600;
+        color: white;
+        display: flex;
+        margin-bottom: 55px;
+      }
+      .bubles {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .buble {
+          text-transform: uppercase;
+          font-weight: 600;
+          font-size: 15px;
+          margin: 0px 25px;
+          color: $color-orange;
+          background-repeat: no-repeat !important;
+          background-size: contain !important;
+          height: 200px;
+          width: 200px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .b1 {background: url("/img/elements/b1.png")}
+        .b2 {background: url("/img/elements/b2.png")}
+        .b3 {background: url("/img/elements/b3.png")}
+        .b4 {background: url("/img/elements/b4.png")}
+      }
+    }
+  }
   &::after {
     content: "";
     position: absolute;
@@ -196,6 +351,10 @@ body {
     -ms-user-select: none;
     user-select: none;
   }
+}
+
+.sec-4 {
+  background: green;
 }
 
 .sec-1,

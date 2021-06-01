@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./tabs.scss";
 import moveToStripe from "./subcomponents/moveToStripe";
 
@@ -8,12 +8,14 @@ const Tabs = () => {
   const listRef = useRef(null);
   const menuItemRefs = useRef([]);
   const allRefs = { backgroundRef, menuItemRefs };
+  const [activeClass, setActiveClass] = useState('_Development');
 
   console.log("nebitno:", moveToStripe);
   useEffect(() => {
     for (const menuItem of menuItemRefs.current) {
       menuItem.onmousedown = () => {
         const clickedItem = menuItem.id.split("menu-")[1];
+        setActiveClass(clickedItem)
         moveToStripe(clickedItem);
       };
     }
@@ -28,7 +30,7 @@ const Tabs = () => {
             key={index}
             id={`menu-${name}`}
           >
-            <span>{name}</span>
+            <span className={(activeClass === name ? 'active' : '')}>{name}</span>
           </li>
         ))}
       </ul>
