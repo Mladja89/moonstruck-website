@@ -45,7 +45,7 @@ body {
 .panel {
   width: 100vw;
   height: 100vh;
-  //   position: relative;
+  position: relative;
   display: flex;
 	flex-wrap: nowrap;
   justify-content: center;
@@ -361,6 +361,7 @@ body {
   height: 2200px;
   background: red;
   display: flex;
+  flex-direction: column;
   flex-wrap: nowrap;
 }
 .sec-1,

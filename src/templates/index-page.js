@@ -38,34 +38,35 @@ const IndexPage = ({ data }) => {
   const [scrollAction, setScrollAcion] = useState("nebitnosrkoz");
 
   useEffect(() => {
-    const sections = [refSlide1, refSlide2, refSlide3].map(
+    const sections = [refSlide1, refSlide2].map(
       (ref) => ref.current
     );
     sections.forEach((panel, i) => {
       ScrollTrigger.create({
         trigger: panel,
         start: "top top",
-        markers: false,
+        markers: true,
         pin: true,
         pinSpacing: false,
         scrub: true,
+        snap: {
+          snapTo: 1 / (sections.length - 1),
+          duration: { min: 0, max: 1 },
+          delay: 0,
+          ease: "power2.inOut",
+          inertia: true,
+          onStart: (a) => {
+            // console.log("TESsT", a);
+            setScrollAcion(a.direction);
+          }
+        },
       });
     });
     
 
-    ScrollTrigger.create({
-      snap: {
-        snapTo: 1 / (sections.length - 1),
-        duration: { min: 0, max: 1 },
-        delay: 0,
-        ease: "power2.inOut",
-        inertia: true,
-        onStart: (a) => {
-          // console.log("TESsT", a);
-          setScrollAcion(a.direction);
-        }
-      },
-    });
+    // ScrollTrigger.create({
+
+    // });
 
     const element = refSlide1.current;
     gsap.fromTo(
@@ -225,6 +226,15 @@ const IndexPage = ({ data }) => {
           </div>
 
         </div>
+      </section>
+
+      <section className="nebitnopanel">
+        <span>assadodkosakdok</span>
+        <span>assadodkosakdok</span>
+        <span>assadodkosakdok</span>
+        <span>assadodkosakdok</span>
+        <span>assadodkosakdok</span>
+        <span>assadodkosakdok</span>
       </section>
       
 
