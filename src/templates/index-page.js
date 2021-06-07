@@ -51,6 +51,7 @@ const IndexPage = ({ data }) => {
         scrub: true,
       });
     });
+    
 
     ScrollTrigger.create({
       snap: {
@@ -60,9 +61,9 @@ const IndexPage = ({ data }) => {
         ease: "power2.inOut",
         inertia: true,
         onStart: (a) => {
-          console.log("TESsT", a);
+          // console.log("TESsT", a);
           setScrollAcion(a.direction);
-        },
+        }
       },
     });
 

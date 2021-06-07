@@ -47,6 +47,7 @@ body {
   height: 100vh;
   //   position: relative;
   display: flex;
+	flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   font-weight: 600;
@@ -356,7 +357,12 @@ body {
 .sec-4 {
   background: green;
 }
-
+.nebitnopanel {
+  height: 2200px;
+  background: red;
+  display: flex;
+  flex-wrap: nowrap;
+}
 .sec-1,
 .sec-2,
 .sec-3 {
