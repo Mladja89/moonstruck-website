@@ -45,7 +45,7 @@ const IndexPage = ({ data }) => {
       ScrollTrigger.create({
         trigger: panel,
         start: "top top",
-        markers: true,
+        markers: false,
         pin: true,
         pinSpacing: false,
         scrub: true,
@@ -77,11 +77,11 @@ const IndexPage = ({ data }) => {
       },
       {
         opacity: 0,
-        backgroundPositionY: "100%",
+        backgroundPositionY: "110%",
         scrollTrigger: {
           trigger: element.querySelector(".sec-1"),
           start: "top top",
-          end: "center center",
+          end: "center 100%",
           scrub: true,
         },
       }
@@ -95,11 +95,11 @@ const IndexPage = ({ data }) => {
       },
       {
         opacity: 1,
-        backgroundPositionY: "100%",
+        backgroundPositionY: "110%",
         scrollTrigger: {
           trigger: element.querySelector(".sec-1"),
           start: "top top",
-          end: "center center",
+          end: "center 100%",
           markers: false,
           scrub: true,
         },
@@ -114,7 +114,7 @@ const IndexPage = ({ data }) => {
       },
       {
         opacity: 0,
-        y: -800,
+        y: -1200,
         scrollTrigger: {
           trigger: element.querySelector(".sec-1"),
           // duration: { min: 0, max: 0.1 },
@@ -177,7 +177,7 @@ const IndexPage = ({ data }) => {
         <div className="sec-wrapper sec-wrapper-2">
           <div className="title-wrapper">
             <h2>
-              <span>what we do </span> services
+              <span>what we do </span> servicest
             </h2>
           </div>
           <div className="whatwedo">
