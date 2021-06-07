@@ -15,7 +15,7 @@ const moveToStripe = (stripeName) => {
   const distanceToGo = presentOffset - wantedPictureOffset + topOffsetObjective;
 
   TweenMax.to(stripeContainer, 0.7, {
-    transform: `translateY(${distanceToGo}px)`,
+    transform: `translateY(${distanceToGo - 100}px)`,
     ease: Power2.easeInOut,
   });
 };

@@ -177,7 +177,7 @@ const IndexPage = ({ data }) => {
         <div className="sec-wrapper sec-wrapper-2">
           <div className="title-wrapper">
             <h2>
-              <span>what we do </span> servicest
+              <span>what we do </span> services
             </h2>
           </div>
           <div className="whatwedo">
@@ -202,11 +202,11 @@ const IndexPage = ({ data }) => {
           <div className="features-wrapper">
             {features.map((feature, index) => {
               return (
-                <div className="feature-item">
+                <div key={index} className="feature-item">
                   <span className="number">0{feature.id}</span>
                   <ul className="features-list">
                     {feature.featureList.map((item) => (
-                      <li>{item}</li>
+                      <li key={item}>{item}</li>
                     ))}
                   </ul>
                 </div>
