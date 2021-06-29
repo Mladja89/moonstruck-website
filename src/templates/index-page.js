@@ -228,13 +228,8 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
 
-      <section className="nebitnopanel">
-        <span>assadodkosakdok</span>
-        <span>assadodkosakdok</span>
-        <span>assadodkosakdok</span>
-        <span>assadodkosakdok</span>
-        <span>assadodkosakdok</span>
-        <span>assadodkosakdok</span>
+      <section className="blog-custom">
+        <BlogRoll></BlogRoll>
       </section>
       
 

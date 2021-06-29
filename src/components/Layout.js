@@ -7,10 +7,14 @@ import './allnew.scss'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 import Headroom from "react-headroom";
+import { Link } from "gatsby";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const TemplateWrapper = ({ children, scrollTriggerAction }) => {
   const { title, description } = useSiteMetadata()
   const headroomF = useRef(null);
+  gsap.registerPlugin(ScrollTrigger);
   // window.headd = headroomF.current
   // console.log('test333', scrollTriggerAction);
   // headroomF.current.disable()
@@ -68,9 +72,25 @@ const TemplateWrapper = ({ children, scrollTriggerAction }) => {
       {/* <Navbar /> */}
       <header>
       <Headroom ref={headroomF} disable >
-        <span>1</span>
-        <span>1</span>
-        <span>1</span>
+        <div className="header-wrapper">
+          <div className="h-left">
+            <span></span>
+          </div>
+          <div className="h-right">
+          <Link to="/">
+            About
+          </Link>
+          <Link to="/">
+            What we do
+          </Link>
+          <Link to="/">
+            Work
+          </Link>
+          <Link to="/">
+            Contact
+          </Link>
+          </div>
+        </div>
       </Headroom>
       </header>
       <div>{children}</div>
