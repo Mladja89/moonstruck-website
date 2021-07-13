@@ -86,6 +86,11 @@ const TemplateWrapper = ({ children, refSlide1, blogStatus }) => {
 
   return (
     <div>
+            <style>{"\
+        strong{\
+          font-weight: 600;\
+        }\
+      "}</style>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -99,7 +104,7 @@ const TemplateWrapper = ({ children, refSlide1, blogStatus }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         /> */}
         <link rel="icon" href="/img/logo/favicon.png" type="image/x-icon"/>
-
+        
       </Helmet>
       {/* <Navbar /> */}
       <header>

@@ -17,6 +17,9 @@ $strokeBlack: #00000085;
 * {
   font-family: "gilroy";
   font-weight: 200;
+  strong {
+    font-weight: 600 !important;
+  }
 }
 
 html,
@@ -51,6 +54,7 @@ header {
   width: 100%;
   position: fixed;
   z-index: 100;
+  top: 0;
   > div {
     > div {
       span {
@@ -524,6 +528,11 @@ body {
       margin: 30px 50px;
       .blog-left {
         .featured-thumbnail {
+          > div {
+            > div {
+              display: none !important;
+            }
+          }
           > div > img {
             display: none !important;
           }
@@ -665,3 +674,52 @@ body {
     }
   }
 }
+
+
+.blog-main {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+  .blog-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    .content {
+      padding-left: 100px;
+      padding-right: 100px;
+      display: flex;
+      flex-direction: column;
+      .blog-description {
+        text-transform: uppercase;
+        color: #9f9f9f;
+      }
+      p {
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        line-height: 1.5;
+        margin: 35px 0;
+        strong{
+          font-weight: 600 !important;
+         }
+      }
+      h1 {
+        font-weight: 600;
+        font-size: 50px;
+      }
+      .main-blog-content {
+
+      img {
+        width: 100%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+      }
+
+    }
+
+    }
+  }
+}
+

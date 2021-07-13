@@ -85,8 +85,6 @@ const IndexPage = ({ data }) => {
             // setScrollAcion(a.direction);
           }
         },
-        disable: true
-        ,
       });
     });
 
