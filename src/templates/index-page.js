@@ -85,6 +85,8 @@ const IndexPage = ({ data }) => {
             // setScrollAcion(a.direction);
           }
         },
+        disable: true
+        ,
       });
     });
 
@@ -106,7 +108,7 @@ const IndexPage = ({ data }) => {
         },
       }
     );
-
+    
     gsap.fromTo(
       element.querySelector(".moon-bg2"),
       {

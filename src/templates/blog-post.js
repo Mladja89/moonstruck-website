@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export const BlogPostTemplate = ({
   content,
@@ -15,6 +16,7 @@ export const BlogPostTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content
+  ScrollTrigger.getAll().forEach(ST => ST.disable());
 
   return (
     <section className="section">
