@@ -50,13 +50,13 @@ const Tabs = () => {
               systems.
             </span>
             <span className="animation-wrapper ani-1">
-              <div class="icon icon6">
-                <div class="moon top"></div>
-                <div class="planet"></div>
-                <div class="ring"></div>
-                <div class="ring planet"></div>
-                <div class="planetoid"></div>
-                <div class="moon bottom"></div>
+              <div className="icon icon6">
+                <div className="moon top"></div>
+                <div className="planet"></div>
+                <div className="ring"></div>
+                <div className="ring planet"></div>
+                <div className="planetoid"></div>
+                <div className="moon bottom"></div>
               </div>
             </span>
           </div>
@@ -76,17 +76,17 @@ const Tabs = () => {
               performance reviews setting system benchmarks.
             </span>
             <span className="animation-wrapper ani-1">
-              <div class="icon icon11">
-                <div class="planet">
-                  <div class="line line1"></div>
-                  <div class="line line2"></div>
-                  <div class="line line3"></div>
-                  <div class="line line4"></div>
-                  <div class="line line5"></div>
-                  <div class="line line6"></div>
-                  <div class="line line7"></div>
-                  <div class="line line8"></div>
-                  <div class="line line9"></div>
+              <div className="icon icon11">
+                <div className="planet">
+                  <div className="line line1"></div>
+                  <div className="line line2"></div>
+                  <div className="line line3"></div>
+                  <div className="line line4"></div>
+                  <div className="line line5"></div>
+                  <div className="line line6"></div>
+                  <div className="line line7"></div>
+                  <div className="line line8"></div>
+                  <div className="line line9"></div>
                 </div>
               </div>
             </span>
@@ -107,12 +107,12 @@ const Tabs = () => {
             </span>
 
             <span className="animation-wrapper ani-1">
-              <div class="icon icon8">
-                <div class="moon top"></div>
-                <div class="planet"></div>
-                <div class="ring"></div>
-                <div class="planetoid"></div>
-                <div class="moon bottom"></div>
+              <div className="icon icon8">
+                <div className="moon top"></div>
+                <div className="planet"></div>
+                <div className="ring"></div>
+                <div className="planetoid"></div>
+                <div className="moon bottom"></div>
               </div>
             </span>
           </div>
@@ -132,13 +132,13 @@ const Tabs = () => {
             </span>
 
             <span className="animation-wrapper ani-1">
-              <div class="icon icon15">
-                <div class="planetoid"></div>
-                <div class="sattelite">
-                  <div class="solarpanel left"></div>
-                  <div class="body"></div>
-                  <div class="solarpanel right"></div>
-                  <div class="dish"></div>
+              <div className="icon icon15">
+                <div className="planetoid"></div>
+                <div className="sattelite">
+                  <div className="solarpanel left"></div>
+                  <div className="body"></div>
+                  <div className="solarpanel right"></div>
+                  <div className="dish"></div>
                 </div>
               </div>
             </span>

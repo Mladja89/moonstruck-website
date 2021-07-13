@@ -35,9 +35,34 @@ const IndexPage = ({ data }) => {
   const refSlide1 = useRef(null);
   const refSlide2 = useRef(null);
   const refSlide3 = useRef(null);
-  const [scrollAction, setScrollAcion] = useState("nebitnosrkoz");
+  // const [scrollAction, setScrollAcion] = useState("nebitnosrkoz");
+  const [blogStatus, setBlogStatus] = useState("");
+
+  const blogTop = useRef(null);
+
 
   useEffect(() => {
+    const observer = new window.IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setBlogStatus('Enter')
+        // position("VISIBLE") // do things if visible
+        return
+      }
+      if (entry.boundingClientRect.top > 0) {
+        setBlogStatus('Bellow')
+        // position("BELOW") // do things if below
+      } else {
+        setBlogStatus('Above')
+        // position("ABOVE") // do things if above
+      }
+    }, {
+      root: null,
+      threshold: 0,
+    })
+  
+    observer.observe(blogTop.current)
+
+
     const sections = [refSlide1, refSlide2].map(
       (ref) => ref.current
     );
@@ -57,16 +82,11 @@ const IndexPage = ({ data }) => {
           inertia: true,
           onStart: (a) => {
             // console.log("TESsT", a);
-            setScrollAcion(a.direction);
+            // setScrollAcion(a.direction);
           }
         },
       });
     });
-    
-
-    // ScrollTrigger.create({
-
-    // });
 
     const element = refSlide1.current;
     gsap.fromTo(
@@ -117,7 +137,6 @@ const IndexPage = ({ data }) => {
         y: -1200,
         scrollTrigger: {
           trigger: element.querySelector(".sec-1"),
-          // duration: { min: 0, max: 0.1 },
           start: "top top",
           end: "center center",
           markers: false,
@@ -125,31 +144,30 @@ const IndexPage = ({ data }) => {
         },
       }
     );
-
-    // const element2 = refSlide2.current;
-    // gsap.fromTo(
-    //   element2.querySelector(".sec-wrapper-2"),
-    //   {
-    //     opacity: 1,
-    //     y: 0,
-    //   },
-    //   {
-    //     opacity: 0,
-    //     y: -400,
-    //     scrollTrigger: {
-    //       trigger: element2.querySelector(".sec-2"),
-    //       // duration: { min: 0, max: 0.1 },
-    //       start: "top top",
-    //       end: "center center",
-    //       markers: true,
-    //       scrub: true,
-    //     },
-    //   }
-    // );
-  }, [refSlide1, refSlide2, refSlide3]);
+    const element2 = refSlide2.current;
+    gsap.fromTo(
+      element2.querySelector(".sec-wrapper-2"),
+      {
+        opacity: 1,
+        y: 0,
+      },
+      {
+        opacity: 0,
+        y: -500,
+        scrollTrigger: {
+          trigger: element2.querySelector(".sec-wrapper-2"),
+          // duration: { min: 0, max: 0.1 },
+          start: "center-=200px center-=200px",
+          // end: "+=500",
+          // markers: true,
+          scrub: true,
+        },
+      }
+    );
+  }, [refSlide1, refSlide2, refSlide3, blogTop]);
 
   return (
-    <Layout scrollTriggerAction={scrollAction}>
+    <Layout refSlide1={refSlide1} blogStatus={blogStatus}>
       <section className="panel sec-1" ref={refSlide1}>
         <div className="sec-wrapper sec-wrapper-1">
           <div className="title-wrapper">
@@ -160,7 +178,17 @@ const IndexPage = ({ data }) => {
               functional.
             </h3>
           </div>
-          <div className="sec-1-desc">
+        </div>
+        <div className="moon-bg"></div>
+        <div className="moon-bg2"></div>
+      </section>
+      <section id="whatwedo" className="panel sec-2" ref={refSlide2}>
+        <div className="sec-wrapper sec-wrapper-2">
+          <div className="title-wrapper">
+            <h2>
+              <span>what we do </span> 
+            </h2>
+            <div className="sec-2-desc">
             <p>
               We provide full cycle software development from idea and design to{" "}
               <br></br> support and maintenance. Based on your needs we can
@@ -169,16 +197,6 @@ const IndexPage = ({ data }) => {
               existing products or services.
             </p>
           </div>
-        </div>
-        <div className="moon-bg"></div>
-        <div className="moon-bg2"></div>
-      </section>
-      <section className="panel sec-2" ref={refSlide2}>
-        <div className="sec-wrapper sec-wrapper-2">
-          <div className="title-wrapper">
-            <h2>
-              <span>what we do </span> services
-            </h2>
           </div>
           <div className="whatwedo">
             <Tabs></Tabs>
@@ -214,7 +232,7 @@ const IndexPage = ({ data }) => {
             })}
           </div>
           <div className="approach-wrapper">
-            <h2>approach</h2>
+            {/* <h2>approach</h2> */}
             <div className="bubles">
             <div className="buble b1">Ideation and Design</div>
             <div className="buble b2">
@@ -228,7 +246,8 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
 
-      <section className="blog-custom">
+      <section  id="blog" className="blog-custom">
+        <span ref={blogTop} className="invisible"></span>
         <BlogRoll></BlogRoll>
       </section>
       

@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef, useEffect, useState} from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
@@ -10,13 +10,14 @@ import Headroom from "react-headroom";
 import { Link } from "gatsby";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { trimEnd } from 'lodash'
 
-const TemplateWrapper = ({ children, scrollTriggerAction }) => {
+const TemplateWrapper = ({ children, refSlide1, blogStatus }) => {
   const { title, description } = useSiteMetadata()
+  const [blogStatusLayout, setBlogStatusLayout] = useState("");
   const headroomF = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
   // window.headd = headroomF.current
-  // console.log('test333', scrollTriggerAction);
   // headroomF.current.disable()
   // const Perform = (direction) => {
   //   console.log(direction);
@@ -25,9 +26,63 @@ const TemplateWrapper = ({ children, scrollTriggerAction }) => {
   //   }
   // }
 
-  // useEffect(() => {
-  //   Perform(scrollTriggerAction) to be made later
-  // }, [scrollTriggerAction]);
+  useEffect(() => {
+    // Perform(scrollTriggerAction) to be made later
+    setBlogStatusLayout(blogStatus)
+  }, [blogStatus]);
+  const logo = useRef(null);
+  const links = useRef(null);
+
+  useEffect(() => {
+    const logoElement = logo.current;
+    const linksElement = links.current;
+    if (refSlide1) {
+    const element = refSlide1.current;
+    gsap.fromTo(
+      [logoElement.querySelector(".white"),
+      linksElement.querySelector(".links-black")],
+      {
+        opacity: 0,
+        visibility: 0,
+        zoom: 1,
+      },
+      {
+        opacity: 1,
+        visibility: 1,
+        zoom: 0.8,
+        scrollTrigger: {
+          trigger: element.querySelector(".sec-1"),
+          start: "top top",
+          end: "+=500",
+          scrub: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      [logoElement.querySelector(".black"),
+      linksElement.querySelector(".links-white")],
+      {
+        opacity: 1,
+        visibility: 1,
+        zoom: 1,
+      },
+      {
+        opacity: 0,
+        visibility: 0,
+        zoom: 0.8,
+        display: "none",
+        scrollTrigger: {
+          trigger: element.querySelector(".sec-1"),
+          start: "top top",
+          end: "+=500",
+          scrub: true,
+        },
+      }
+    );
+  }
+  }, [logo]);
+
 
   return (
     <div>
@@ -35,66 +90,60 @@ const TemplateWrapper = ({ children, scrollTriggerAction }) => {
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />
-
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href={`${withPrefix('/')}img/apple-touch-icon.png`}
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href={`${withPrefix('/')}img/favicon-32x32.png`}
-          sizes="32x32"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href={`${withPrefix('/')}img/favicon-16x16.png`}
-          sizes="16x16"
-        />
-
-        <link
-          rel="mask-icon"
-          href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
-          color="#ff4400"
-        />
         <meta name="theme-color" content="#fff" />
-
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={title} />
         <meta property="og:url" content="/" />
-        <meta
+        {/* <meta
           property="og:image"
           content={`${withPrefix('/')}img/og-image.jpg`}
-        />
+        /> */}
+        <link rel="icon" href="/img/logo/favicon.png" type="image/x-icon"/>
+
       </Helmet>
       {/* <Navbar /> */}
       <header>
-      <Headroom ref={headroomF} disable >
+      <Headroom ref={headroomF} disable={blogStatusLayout === "Bellow" ? true : false} >
         <div className="header-wrapper">
-          <div className="h-left">
-            <span></span>
-          </div>
-          <div className="h-right">
-          <Link to="/">
+          <Link to="/" ref={logo} className="h-left">
+            <span className="white"><img src={`${withPrefix('/')}img/logo/logo-white.png`}></img></span>
+            <span className="black"><img src={`${withPrefix('/')}img/logo/logo-black.png`}></img></span>
+          </Link>
+          <div ref={links} className="h-right">
+            <div className="links-black">
+            <Link to="/">
             About
           </Link>
-          <Link to="/">
+          <Link to="/#whatwedo">
             What we do
           </Link>
-          <Link to="/">
+          <Link to="/#blog">
             Work
           </Link>
           <Link to="/">
             Contact
           </Link>
+            </div>
+            <div className="links-white">
+            <Link to="/">
+            About
+          </Link>
+          <Link to="/#whatwedo">
+            What we do
+          </Link>
+          <Link to="/#blog">
+            Work
+          </Link>
+          <Link to="/">
+            Contact
+          </Link>
+            </div>
           </div>
         </div>
       </Headroom>
       </header>
       <div>{children}</div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

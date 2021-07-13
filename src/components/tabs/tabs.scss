@@ -39,7 +39,7 @@ $animationtime: 5s;
       }
       .stripe-item {
         width: 100%;
-        background: #0000007a;
+        background: #000000bf;
         color: white;
         padding: 30px 60px;
         transform: skew(330deg, 0deg);
@@ -52,6 +52,7 @@ $animationtime: 5s;
         > .text {
           transform: skew(30deg, 0deg);
           display: flex;
+          font-weight: 600;
         }
         > .animation-wrapper {
           div {
