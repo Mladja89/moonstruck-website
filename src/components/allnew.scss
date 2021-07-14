@@ -403,7 +403,7 @@ body {
             content: "";
             position: absolute;
             background-repeat: no-repeat !important;
-            background: url(http://localhost:8888/img/right-arrow.svg);
+            background: url("/img/right-arrow.svg");
             background-size: contain;
             width: 50px;
             height: 100px;
