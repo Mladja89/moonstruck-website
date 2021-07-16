@@ -38,12 +38,13 @@ const IndexPage = ({ data }) => {
   const refSlide3 = useRef(null);
   // const [scrollAction, setScrollAcion] = useState("nebitnosrkoz");
   const [blogStatus, setBlogStatus] = useState("");
-  const [mobile, setMobile] = useState(typeof window !== 'undefined' && window.matchMedia("(max-width: 992px)"));
+  const [mobile, setMobile] = useState(true);
 
   const blogTop = useRef(null);
 
 
   useEffect(() => {
+    setMobile(typeof window !== 'undefined' && window.matchMedia("(max-width: 992px)"))
     const observer = new window.IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setBlogStatus('Enter')
