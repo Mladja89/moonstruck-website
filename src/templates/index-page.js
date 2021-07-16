@@ -38,9 +38,23 @@ const IndexPage = ({ data }) => {
   const refSlide3 = useRef(null);
   // const [scrollAction, setScrollAcion] = useState("nebitnosrkoz");
   const [blogStatus, setBlogStatus] = useState("");
-  const [mobile, setMobile] = useState(typeof window !== "undefined" && window.matchMedia("(max-width: 992px)"));
-
   const blogTop = useRef(null);
+  // const [mobile, setMobile] = useState(typeof window !== "undefined" && window.matchMedia("(max-width: 992px)"));
+
+  const [mobile, setMobile] = useState(false);
+  // const data = useData();
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
+        setMobile(true);
+      }
+    }
+  }, []);
 
   useEffect(() => {
  
@@ -71,7 +85,7 @@ const IndexPage = ({ data }) => {
     sections.forEach((panel, i) => {
       // const mq = ;
       // console.log(mq)
-      if (mobile.matches) {
+      if (!mobile) {
         ScrollTrigger.create({
           trigger: panel,
           start: "top top",
@@ -116,7 +130,7 @@ const IndexPage = ({ data }) => {
         scrollTrigger: {
           trigger: element.querySelector(".sec-1"),
           start: "top top",
-          end: `center ${!mobile.matches ? "150%" : "200%"}`,
+          end: `center ${!mobile ? "150%" : "200%"}`,
 
           scrub: true,
         },
@@ -135,7 +149,7 @@ const IndexPage = ({ data }) => {
         scrollTrigger: {
           trigger: element.querySelector(".sec-1"),
           start: "top top",
-          end: `center ${!mobile.matches ? "150%" : "200%"}`,
+          end: `center ${!mobile ? "150%" : "200%"}`,
           // markers: true,
           // markers: false,
           scrub: true,
@@ -162,7 +176,7 @@ const IndexPage = ({ data }) => {
       }
     );
     const element2 = refSlide2.current;
-    if (mobile.matches === false) {
+    if (mobile === false) {
       gsap.fromTo(
         element2.querySelector(".sec-wrapper-2"),
         {
@@ -218,13 +232,13 @@ const IndexPage = ({ data }) => {
             </div>
           </div>
           <div className="whatwedo">
-            {!mobile.matches ? <Tabs></Tabs> : <MobileTabs></MobileTabs>}
+            {!mobile ? <Tabs></Tabs> : <MobileTabs></MobileTabs>}
           </div>
         </div>
         <div className="moon-bg"></div>
       </section>
       <section
-        className={`panel ${mobile.matches ? "mobile-panel" : ""} sec-3`}
+        className={`panel ${mobile ? "mobile-panel" : ""} sec-3`}
         ref={refSlide3}
       >
         <div className="sec-wrapper sec-wrapper-3">
