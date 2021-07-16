@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Tabs from "../components/tabs/tabs";
+import MobileTabs from "../components/tabs/mobiletabs";
 
 import Layout from "../components/Layout";
 import Features from "../components/Features";
@@ -116,7 +117,8 @@ const IndexPage = ({ data }) => {
         scrollTrigger: {
           trigger: element.querySelector(".sec-1"),
           start: "top top",
-          end: "center 100%",
+          end: `center ${!mobile.matches ? "150%" : "200%"}`,
+          
           scrub: true,
         },
       }
@@ -134,8 +136,9 @@ const IndexPage = ({ data }) => {
         scrollTrigger: {
           trigger: element.querySelector(".sec-1"),
           start: "top top",
-          end: "center 100%",
-          markers: false,
+          end: `center ${!mobile.matches ? "150%" : "200%"}`,
+          // markers: true,
+          // markers: false,
           scrub: true,
         },
       }
@@ -160,7 +163,7 @@ const IndexPage = ({ data }) => {
       }
     );
     const element2 = refSlide2.current;
-    if (mobile === false) {
+    if (mobile.matches === false) {
     gsap.fromTo(
       element2.querySelector(".sec-wrapper-2"),
       {
@@ -216,12 +219,13 @@ const IndexPage = ({ data }) => {
           </div>
           </div>
           <div className="whatwedo">
-            <Tabs></Tabs>
+            {!mobile.matches ? (<Tabs></Tabs>) : (<MobileTabs></MobileTabs>)}
+            
           </div>
         </div>
         <div className="moon-bg"></div>
       </section>
-      <section className="panel sec-3" ref={refSlide3}>
+      <section className={`panel ${mobile.matches ? "mobile-panel" : ""} sec-3`} ref={refSlide3}>
         <div className="sec-wrapper sec-wrapper-3">
           <div className="title-wrapper">
             <h2>

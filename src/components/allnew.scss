@@ -122,6 +122,10 @@ header {
   }
 }
 
+.mobile-panel {
+  height: unset !important;
+}
+
 .panel {
   width: 100vw;
   height: 100vh;
@@ -268,6 +272,7 @@ body {
       align-items: baseline;
       @media (max-width: 992px) {
         padding: 0px 15px;
+        margin-top: 45px;
       }
       .sec-2-desc {
         color: white;
@@ -279,6 +284,7 @@ body {
           @media (max-width: 992px) {
             font-size: 14px;
             text-shadow: none;
+            margin-bottom: 0px;
           }
           letter-spacing: 1px;
           text-shadow: -1px -1px 0 $strokeBlack, 0 -1px 0 $strokeBlack,
@@ -313,6 +319,10 @@ body {
       display: flex;
       height: 100%;
       align-items: center;
+      @media (max-width: 992px) {
+        display: inline;
+        overflow: hidden;
+      }
       .tabs-wrapper {
         display: flex;
         // position: relative;
@@ -401,6 +411,10 @@ body {
       display: flex;
       flex-direction: row;
       justify-content: center;
+      @media (max-width: 992px) {
+        overflow-x: scroll;
+        justify-content: unset;
+      }
       .feature-item {
         display: flex;
         flex-direction: column;
@@ -457,11 +471,22 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        @media (max-width: 992px) {
+          flex-direction: column;
+          align-items: center;
+        }
         .buble {
           text-transform: uppercase;
           font-weight: 600;
           font-size: 15px;
           margin: 0px 25px;
+          @media (max-width: 992px) {
+            margin: 20px 25px;
+            
+    height: 160px;
+    width: 160px;
+
+          }
           color: $color-orange;
           background-repeat: no-repeat !important;
           background-size: contain !important;
@@ -658,6 +683,9 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    @media (max-width: 992px) {
+      display: none;
+    }
   }
   .footer-wrapper {
     max-width: 1600px;
@@ -666,6 +694,10 @@ body {
     flex-direction: column;
     z-index: 5;
     padding: 200px 0px;
+    @media (max-width: 992px) {
+      padding: 60px 20px;
+    }
+  
     .title-wrapper {
       h2 {
         font-weight: 600;
@@ -690,12 +722,18 @@ body {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      @media (max-width: 992px) {
+        flex-direction: column;
+      }
       .mail {
         padding-left: 25px;
         a {
           text-decoration: none;
           color: white;
           font-size: 60px;
+          @media (max-width: 992px) {
+            font-size: 30px;
+          }
           &:hover {
             color: $color-orange;
           }
@@ -704,6 +742,11 @@ body {
       .social {
         display: flex;
         flex-direction: row;
+        @media (max-width: 992px) {
+          height: 80px;
+          margin-top: 30px;
+          justify-content: center;
+        }
         a {
           width: 30px;
           margin: 0px 15px;
@@ -743,6 +786,10 @@ body {
       padding-right: 100px;
       display: flex;
       flex-direction: column;
+      @media (max-width: 992px) {
+        padding-left: 20px;
+    padding-right: 20px;
+      }
       .blog-description {
         text-transform: uppercase;
         color: #9f9f9f;

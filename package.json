@@ -31,7 +31,9 @@
     "react-dom": "^16.8.4",
     "react-headroom": "^3.1.1",
     "react-helmet": "^6.0.0",
+    "react-slick": "^0.28.1",
     "react-transition-group": "^4.4.2",
+    "slick-carousel": "^1.8.1",
     "uuid": "^7.0.0"
   },
   "keywords": [
