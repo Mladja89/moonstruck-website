@@ -37,6 +37,7 @@ const IndexPage = ({ data }) => {
   const refSlide3 = useRef(null);
   // const [scrollAction, setScrollAcion] = useState("nebitnosrkoz");
   const [blogStatus, setBlogStatus] = useState("");
+  const [mobile, setMobile] = useState(typeof window !== 'undefined' && window.matchMedia("(max-width: 992px)"));
 
   const blogTop = useRef(null);
 
@@ -67,9 +68,9 @@ const IndexPage = ({ data }) => {
       (ref) => ref.current
     );
     sections.forEach((panel, i) => {
-        const mq = typeof window !== 'undefined' && window.matchMedia("(max-width: 833px)");
-        console.log(mq)
-        if (mq.matches) {
+        // const mq = ;
+        // console.log(mq)
+        if (mobile.matches) {
           ScrollTrigger.create({
             trigger: panel,
             start: "top top",
@@ -159,6 +160,7 @@ const IndexPage = ({ data }) => {
       }
     );
     const element2 = refSlide2.current;
+    if (mobile === false) {
     gsap.fromTo(
       element2.querySelector(".sec-wrapper-2"),
       {
@@ -178,6 +180,7 @@ const IndexPage = ({ data }) => {
         },
       }
     );
+  }
   }, [refSlide1, refSlide2, refSlide3, blogTop]);
 
   return (
