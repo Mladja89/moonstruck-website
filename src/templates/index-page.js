@@ -57,7 +57,7 @@ const IndexPage = ({ data }) => {
   }, []);
 
   useEffect(() => {
- 
+    ScrollTrigger.getAll().forEach(ST => ST.disable());
     const observer = new window.IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -85,7 +85,9 @@ const IndexPage = ({ data }) => {
     sections.forEach((panel, i) => {
       // const mq = ;
       // console.log(mq)
-      if (!mobile) {
+      console.log("PRE IFA TI JEBEM MATER 😭😭😭", mobile);
+      if (mobile) {
+        console.log("PRVI 👆👆👆👆👆", mobile);
         ScrollTrigger.create({
           trigger: panel,
           start: "top top",
@@ -95,6 +97,7 @@ const IndexPage = ({ data }) => {
           scrub: true,
         });
       } else {
+        console.log("DRUGI 👆👆👆👆👆", mobile);
         ScrollTrigger.create({
           trigger: panel,
           start: "top top",
@@ -198,13 +201,15 @@ const IndexPage = ({ data }) => {
       );
     }
   }, [refSlide1, refSlide2, refSlide3, blogTop, mobile]);
-
+  const proba = () => {
+    console.log(mobile)
+  }
   return (
     <Layout refSlide1={refSlide1} blogStatus={blogStatus}>
       <section className="panel sec-1" ref={refSlide1}>
         <div className="sec-wrapper sec-wrapper-1">
           <div className="title-wrapper">
-            <h2>Simply functional</h2>
+            <h2 onClick={proba}>Simply functional</h2>
             <h3>
               Taking on the challenges and complexity <br></br> of your idea, we
               simplify your equation<br></br> and make it work, simply,
