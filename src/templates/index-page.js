@@ -57,7 +57,15 @@ const IndexPage = ({ data }) => {
   }, []);
 
   useEffect(() => {
-    ScrollTrigger.getAll().forEach(ST => ST.disable());
+    ScrollTrigger.getAll().forEach((ST, i) => {
+      if (ST.vars.end === "+=500") {
+        return
+      } else {
+        ST.kill()
+      }
+      
+    });
+
     const observer = new window.IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -83,11 +91,7 @@ const IndexPage = ({ data }) => {
 
     const sections = [refSlide1, refSlide2].map((ref) => ref.current);
     sections.forEach((panel, i) => {
-      // const mq = ;
-      // console.log(mq)
-      console.log("PRE IFA TI JEBEM MATER 😭😭😭", mobile);
       if (mobile) {
-        console.log("PRVI 👆👆👆👆👆", mobile);
         ScrollTrigger.create({
           trigger: panel,
           start: "top top",
@@ -97,7 +101,6 @@ const IndexPage = ({ data }) => {
           scrub: true,
         });
       } else {
-        console.log("DRUGI 👆👆👆👆👆", mobile);
         ScrollTrigger.create({
           trigger: panel,
           start: "top top",
@@ -205,7 +208,7 @@ const IndexPage = ({ data }) => {
     console.log(mobile)
   }
   return (
-    <Layout refSlide1={refSlide1} blogStatus={blogStatus}>
+    <Layout refSlide1={refSlide1} blogStatus={blogStatus} mobile={mobile}>
       <section className="panel sec-1" ref={refSlide1}>
         <div className="sec-wrapper sec-wrapper-1">
           <div className="title-wrapper">

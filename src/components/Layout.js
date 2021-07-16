@@ -12,7 +12,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { trimEnd } from 'lodash'
 
-const TemplateWrapper = ({ children, refSlide1, blogStatus }) => {
+const TemplateWrapper = ({ children, refSlide1, blogStatus, mobile }) => {
   const { title, description } = useSiteMetadata()
   const [blogStatusLayout, setBlogStatusLayout] = useState("");
   const headroomF = useRef(null);
@@ -34,6 +34,7 @@ const TemplateWrapper = ({ children, refSlide1, blogStatus }) => {
   const links = useRef(null);
 
   useEffect(() => {
+    
     const logoElement = logo.current;
     const linksElement = links.current;
     if (refSlide1) {
@@ -81,7 +82,7 @@ const TemplateWrapper = ({ children, refSlide1, blogStatus }) => {
       }
     );
   }
-  }, [logo]);
+  }, [logo, mobile]);
 
 
   return (
