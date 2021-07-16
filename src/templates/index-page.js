@@ -38,70 +38,68 @@ const IndexPage = ({ data }) => {
   const refSlide3 = useRef(null);
   // const [scrollAction, setScrollAcion] = useState("nebitnosrkoz");
   const [blogStatus, setBlogStatus] = useState("");
-  const [mobile, setMobile] = useState(true);
+  const [mobile, setMobile] = useState(typeof window !== "undefined" && window.matchMedia("(max-width: 992px)"));
 
   const blogTop = useRef(null);
 
-
   useEffect(() => {
-    setMobile(typeof window !== 'undefined' && window.matchMedia("(max-width: 992px)"))
-    const observer = new window.IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setBlogStatus('Enter')
-        // position("VISIBLE") // do things if visible
-        return
-      }
-      if (entry.boundingClientRect.top > 0) {
-        setBlogStatus('Bellow')
-        // position("BELOW") // do things if below
-      } else {
-        setBlogStatus('Above')
-        // position("ABOVE") // do things if above
-      }
-    }, {
-      root: null,
-      threshold: 0,
-    })
-  
-    observer.observe(blogTop.current)
-
-
-    const sections = [refSlide1, refSlide2].map(
-      (ref) => ref.current
-    );
-    sections.forEach((panel, i) => {
-        // const mq = ;
-        // console.log(mq)
-        if (mobile.matches) {
-          ScrollTrigger.create({
-            trigger: panel,
-            start: "top top",
-            markers: false,
-            pin: true,
-            pinSpacing: false,
-            scrub: true,
-          });
+ 
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setBlogStatus("Enter");
+          // position("VISIBLE") // do things if visible
+          return;
+        }
+        if (entry.boundingClientRect.top > 0) {
+          setBlogStatus("Bellow");
+          // position("BELOW") // do things if below
         } else {
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "top top",
-        markers: false,
-        pin: true,
-        pinSpacing: false,
-        scrub: true,
-        snap: {
+          setBlogStatus("Above");
+          // position("ABOVE") // do things if above
+        }
+      },
+      {
+        root: null,
+        threshold: 0,
+      }
+    );
 
-          snapTo: 1 / (sections.length - 1),
-          duration: { min: 0, max: 1 },
-          delay: 0,
-          ease: "power2.inOut",
-          inertia: true,
-          onStart: (a) => {
-            // console.log("TESsT", a);
-            // setScrollAcion(a.direction);
-          }
-        },
-      });
+    observer.observe(blogTop.current);
+
+    const sections = [refSlide1, refSlide2].map((ref) => ref.current);
+    sections.forEach((panel, i) => {
+      // const mq = ;
+      // console.log(mq)
+      if (mobile.matches) {
+        ScrollTrigger.create({
+          trigger: panel,
+          start: "top top",
+          markers: false,
+          pin: true,
+          pinSpacing: false,
+          scrub: true,
+        });
+      } else {
+        ScrollTrigger.create({
+          trigger: panel,
+          start: "top top",
+          markers: false,
+          pin: true,
+          pinSpacing: false,
+          scrub: true,
+          snap: {
+            snapTo: 1 / (sections.length - 1),
+            duration: { min: 0, max: 1 },
+            delay: 0,
+            ease: "power2.inOut",
+            inertia: true,
+            onStart: (a) => {
+              // console.log("TESsT", a);
+              // setScrollAcion(a.direction);
+            },
+          },
+        });
       }
     });
 
@@ -119,12 +117,12 @@ const IndexPage = ({ data }) => {
           trigger: element.querySelector(".sec-1"),
           start: "top top",
           end: `center ${!mobile.matches ? "150%" : "200%"}`,
-          
+
           scrub: true,
         },
       }
     );
-    
+
     gsap.fromTo(
       element.querySelector(".moon-bg2"),
       {
@@ -165,27 +163,27 @@ const IndexPage = ({ data }) => {
     );
     const element2 = refSlide2.current;
     if (mobile.matches === false) {
-    gsap.fromTo(
-      element2.querySelector(".sec-wrapper-2"),
-      {
-        opacity: 1,
-        y: 0,
-      },
-      {
-        opacity: 0,
-        y: -500,
-        scrollTrigger: {
-          trigger: element2.querySelector(".sec-wrapper-2"),
-          // duration: { min: 0, max: 0.1 },
-          start: "center-=200px center-=200px",
-          // end: "+=500",
-          // markers: true,
-          scrub: true,
+      gsap.fromTo(
+        element2.querySelector(".sec-wrapper-2"),
+        {
+          opacity: 1,
+          y: 0,
         },
-      }
-    );
-  }
-  }, [refSlide1, refSlide2, refSlide3, blogTop]);
+        {
+          opacity: 0,
+          y: -500,
+          scrollTrigger: {
+            trigger: element2.querySelector(".sec-wrapper-2"),
+            // duration: { min: 0, max: 0.1 },
+            start: "center-=200px center-=200px",
+            // end: "+=500",
+            // markers: true,
+            scrub: true,
+          },
+        }
+      );
+    }
+  }, [refSlide1, refSlide2, refSlide3, blogTop, mobile]);
 
   return (
     <Layout refSlide1={refSlide1} blogStatus={blogStatus}>
@@ -207,26 +205,28 @@ const IndexPage = ({ data }) => {
         <div className="sec-wrapper sec-wrapper-2">
           <div className="title-wrapper">
             <h2>
-              <span>what we do </span> 
+              <span>what we do </span>
             </h2>
             <div className="sec-2-desc">
-            <p>
-              We provide full cycle software development from idea and design to{" "}
-              <br></br> support and maintenance. Based on your needs we can
-              deliver <br></br> new products, and help you to re-engineer and
-              upgrade <br></br>
-              existing products or services.
-            </p>
-          </div>
+              <p>
+                We provide full cycle software development from idea and design
+                to <br></br> support and maintenance. Based on your needs we can
+                deliver <br></br> new products, and help you to re-engineer and
+                upgrade <br></br>
+                existing products or services.
+              </p>
+            </div>
           </div>
           <div className="whatwedo">
-            {!mobile.matches ? (<Tabs></Tabs>) : (<MobileTabs></MobileTabs>)}
-            
+            {!mobile.matches ? <Tabs></Tabs> : <MobileTabs></MobileTabs>}
           </div>
         </div>
         <div className="moon-bg"></div>
       </section>
-      <section className={`panel ${mobile.matches ? "mobile-panel" : ""} sec-3`} ref={refSlide3}>
+      <section
+        className={`panel ${mobile.matches ? "mobile-panel" : ""} sec-3`}
+        ref={refSlide3}
+      >
         <div className="sec-wrapper sec-wrapper-3">
           <div className="title-wrapper">
             <h2>
@@ -256,23 +256,21 @@ const IndexPage = ({ data }) => {
           <div className="approach-wrapper">
             {/* <h2>approach</h2> */}
             <div className="bubles">
-            <div className="buble b1">Ideation and Design</div>
-            <div className="buble b2">
-              Proof of Concept <br></br> Development
+              <div className="buble b1">Ideation and Design</div>
+              <div className="buble b2">
+                Proof of Concept <br></br> Development
+              </div>
+              <div className="buble b3">MVP & Launch</div>
+              <div className="buble b4">Scaling and Support</div>
             </div>
-            <div className="buble b3">MVP & Launch</div>
-            <div className="buble b4">Scaling and Support</div>
           </div>
-          </div>
-
         </div>
       </section>
 
-      <section  id="blog" className="blog-custom">
+      <section id="blog" className="blog-custom">
         <span ref={blogTop} className="invisible"></span>
         <BlogRoll></BlogRoll>
       </section>
-      
 
       {/* <IndexPageTemplate
         image={frontmatter.image}
