@@ -139,7 +139,7 @@ const TemplateWrapper = ({ children, refSlide1, blogStatus }) => {
           <Link to="/#blog">
             Work
           </Link>
-          <Link to="/">
+          <Link to="/#contact">
             Contact
           </Link>
             </div>

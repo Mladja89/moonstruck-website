@@ -12,7 +12,7 @@ import twitterO from "../img/social/twitter-orange.svg";
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="footer has-background-black has-text-white-ter">
+      <footer id="blog" className="footer has-background-black has-text-white-ter">
         <div className="footer-wrapper">
           <div className="title-wrapper">
             <h2>

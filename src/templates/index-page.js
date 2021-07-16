@@ -67,6 +67,18 @@ const IndexPage = ({ data }) => {
       (ref) => ref.current
     );
     sections.forEach((panel, i) => {
+        const mq = typeof window !== 'undefined' && window.matchMedia("(max-width: 833px)");
+        console.log(mq)
+        if (mq.matches) {
+          ScrollTrigger.create({
+            trigger: panel,
+            start: "top top",
+            markers: false,
+            pin: true,
+            pinSpacing: false,
+            scrub: true,
+          });
+        } else {
       ScrollTrigger.create({
         trigger: panel,
         start: "top top",
@@ -75,6 +87,7 @@ const IndexPage = ({ data }) => {
         pinSpacing: false,
         scrub: true,
         snap: {
+
           snapTo: 1 / (sections.length - 1),
           duration: { min: 0, max: 1 },
           delay: 0,
@@ -86,6 +99,7 @@ const IndexPage = ({ data }) => {
           }
         },
       });
+      }
     });
 
     const element = refSlide1.current;
