@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import "./tabs.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -12,17 +12,6 @@ const MobileTabs = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-
-  useEffect(() => {
-    // for (const menuItem of menuItemRefs.current) {
-    //   menuItem.onmousedown = () => {
-    //     const clickedItem = menuItem.id.split("menu-")[1];
-    //     setActiveClass(clickedItem);
-    //     moveToStripe(clickedItem);
-    //   };
-    // }
-    // moveToStripe(activeClass);
-  }, []);
 
   return (
 

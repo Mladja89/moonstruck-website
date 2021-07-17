@@ -1,13 +1,12 @@
 import React, { useRef, useEffect, useState } from "react";
-import PropTypes, { func } from "prop-types";
-import { Link, graphql } from "gatsby";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Tabs from "../components/tabs/tabs";
 import MobileTabs from "../components/tabs/mobiletabs";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 
 const IndexPage = ({ data }) => {
@@ -30,19 +29,16 @@ const IndexPage = ({ data }) => {
     },
   ];
 
-  const { frontmatter } = data.markdownRemark;
   gsap.registerPlugin(ScrollTrigger);
 
   const refSlide1 = useRef(null);
   const refSlide2 = useRef(null);
   const refSlide3 = useRef(null);
-  // const [scrollAction, setScrollAcion] = useState("nebitnosrkoz");
   const [blogStatus, setBlogStatus] = useState("");
   const blogTop = useRef(null);
   // const [mobile, setMobile] = useState(typeof window !== "undefined" && window.matchMedia("(max-width: 992px)"));
 
   const [mobile, setMobile] = useState(false);
-  // const data = useData();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -115,7 +111,6 @@ const IndexPage = ({ data }) => {
             ease: "power2.inOut",
             inertia: true,
             onStart: (a) => {
-              // console.log("TESsT", a);
               // setScrollAcion(a.direction);
             },
           },
@@ -156,8 +151,6 @@ const IndexPage = ({ data }) => {
           trigger: element.querySelector(".sec-1"),
           start: "top top",
           end: `center ${!mobile ? "150%" : "200%"}`,
-          // markers: true,
-          // markers: false,
           scrub: true,
         },
       }
@@ -276,7 +269,6 @@ const IndexPage = ({ data }) => {
             })}
           </div>
           <div className="approach-wrapper">
-            {/* <h2>approach</h2> */}
             <div className="bubles">
               <div className="buble b1">Ideation and Design</div>
               <div className="buble b2">
@@ -293,16 +285,6 @@ const IndexPage = ({ data }) => {
         <span ref={blogTop} className="invisible"></span>
         <BlogRoll></BlogRoll>
       </section>
-
-      {/* <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
-      /> */}
     </Layout>
   );
 };

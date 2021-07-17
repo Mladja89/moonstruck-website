@@ -248,11 +248,11 @@ body {
     }
   }
   .moon-bg {
-    background: url("/img/moonstruck/moon/moon-light2.png");
+    background: url("/img/moonstruck/moon/moon-light2.jpg");
     z-index: 1;
   }
   .moon-bg2 {
-    background: url("/img/moonstruck/moon/moon-dark.png");
+    background: url("/img/moonstruck/moon/moon-dark.jpg");
     z-index: 2;
   }
 }
@@ -448,15 +448,13 @@ body {
             right: calc(100% - -25px);
             top: -40%;
           }
-
         }
-        &:nth-of-type(1){
+        &:nth-of-type(1) {
           :after {
             content: "";
             width: 0px !important;
           }
         }
-
       }
     }
     .approach-wrapper {
@@ -482,10 +480,9 @@ body {
           margin: 0px 25px;
           @media (max-width: 992px) {
             margin: 20px 25px;
-            
-    height: 160px;
-    width: 160px;
 
+            height: 160px;
+            width: 160px;
           }
           color: $color-orange;
           background-repeat: no-repeat !important;
@@ -608,12 +605,12 @@ body {
           > div > img {
             display: none !important;
           }
-          > div > 
-          {
+          > div > {
             display: none;
-          div {
-            display: none;
-          }}
+            div {
+              display: none;
+            }
+          }
           img {
             // max-width: 120px;
             position: relative !important;
@@ -697,7 +694,7 @@ body {
     @media (max-width: 992px) {
       padding: 60px 20px;
     }
-  
+
     .title-wrapper {
       h2 {
         font-weight: 600;
@@ -769,7 +766,6 @@ body {
   }
 }
 
-
 .blog-main {
   margin-top: 200px;
   display: flex;
@@ -788,7 +784,7 @@ body {
       flex-direction: column;
       @media (max-width: 992px) {
         padding-left: 20px;
-    padding-right: 20px;
+        padding-right: 20px;
       }
       .blog-description {
         text-transform: uppercase;
@@ -799,25 +795,21 @@ body {
         letter-spacing: 0.5px;
         line-height: 1.5;
         margin: 35px 0;
-        strong{
+        strong {
           font-weight: 600 !important;
-         }
+        }
       }
       h1 {
         font-weight: 600;
         font-size: 50px;
       }
       .main-blog-content {
-
-      img {
-        width: 100%;
-        margin-top: 25px;
-        margin-bottom: 25px;
+        img {
+          width: 100%;
+          margin-top: 25px;
+          margin-bottom: 25px;
+        }
       }
-
-    }
-
     }
   }
 }
-

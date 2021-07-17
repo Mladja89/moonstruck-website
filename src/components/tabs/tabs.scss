@@ -76,11 +76,7 @@ $animationtime: 5s;
           left: 50%;
           border: 0;
           z-index: -1;
-          transform: skew(
-            30deg
-            , 
-            0deg
-            ) translate(-50%, -50%);
+          transform: skew(30deg, 0deg) translate(-50%, -50%);
           overflow: visible;
           & .icon {
             position: relative;
@@ -184,16 +180,16 @@ $animationtime: 5s;
                 }
               }
             }
-            &.icon11{
-      
-              & .planet{
+            &.icon11 {
+              & .planet {
                 top: 17.5%;
                 left: 17.5%;
                 width: 65%;
                 height: 65%;
                 overflow: visible;
-                animation: icon11planet $animationtime*2 ease 0s infinite alternate;
-                &:before{
+                animation: icon11planet $animationtime * 2 ease 0s infinite
+                  alternate;
+                &:before {
                   top: -10%;
                   left: 73%;
                   width: 25%;
@@ -203,31 +199,31 @@ $animationtime: 5s;
                   border-color: $gold $gold transparent $gold;
                   transform: rotate(40deg);
                 }
-                
-                & .line{
+
+                & .line {
                   height: 1%;
                   border-color: $gold transparent transparent transparent;
-                  &.line1{
+                  &.line1 {
                     top: 7%;
                     right: 22%;
                     width: 25%;
                   }
-                  &.line2{
+                  &.line2 {
                     top: 18%;
                     left: 10%;
                     width: 55%;
                   }
-                  &.line3{
+                  &.line3 {
                     top: 30%;
                     left: 3%;
                     width: 94%;
                   }
-                  &.line4{
+                  &.line4 {
                     top: 40%;
                     right: 0;
                     width: 35%;
                     overflow: visible;
-                    &:before{
+                    &:before {
                       top: -$borderwidth;
                       left: -60%;
                       width: 30%;
@@ -236,17 +232,17 @@ $animationtime: 5s;
                       border-color: $gold transparent transparent transparent;
                     }
                   }
-                  &.line5{
+                  &.line5 {
                     top: 50%;
                     left: 0;
                     width: 100%;
                   }
-                  &.line6{
+                  &.line6 {
                     top: 58%;
                     left: 0;
                     width: 28%;
                     overflow: visible;
-                    &:before{
+                    &:before {
                       top: -$borderwidth;
                       left: 130%;
                       width: 30%;
@@ -255,12 +251,12 @@ $animationtime: 5s;
                       border-color: $gold transparent transparent transparent;
                     }
                   }
-                  &.line7{
+                  &.line7 {
                     top: 68%;
                     left: 3%;
                     width: 58%;
                     overflow: visible;
-                    &:before{
+                    &:before {
                       top: -$borderwidth;
                       left: 120%;
                       width: 40%;
@@ -268,7 +264,7 @@ $animationtime: 5s;
                       @include bordered();
                       border-color: $gold transparent transparent transparent;
                     }
-                    &:after{
+                    &:after {
                       margin-top: -15%;
                       left: 100%;
                       padding: 8%;
@@ -276,12 +272,12 @@ $animationtime: 5s;
                       border-radius: 50%;
                     }
                   }
-                  &.line8{
+                  &.line8 {
                     top: 80%;
                     right: 10%;
                     width: 25%;
                     overflow: visible;
-                    &:before{
+                    &:before {
                       top: -0.1vw;
                       left: -70%;
                       width: 30%;
@@ -290,27 +286,24 @@ $animationtime: 5s;
                       border-color: $gold transparent transparent transparent;
                     }
                   }
-                  &.line9{
+                  &.line9 {
                     top: 93%;
                     left: 25%;
                     width: 25%;
                   }
                 }
-                
               }
-              
             }
-            &.icon8{
-      
-              & .moon{
-                &.top{
+            &.icon8 {
+              & .moon {
+                &.top {
                   top: 15%;
                   left: 10%;
                   width: 8%;
                   height: 8%;
                   overflow: visible;
                   animation: icon8moontop $animationtime/2 linear 0s infinite;
-                  &:before{
+                  &:before {
                     top: 120%;
                     left: -30%;
                     width: 1%;
@@ -319,7 +312,7 @@ $animationtime: 5s;
                     border-radius: 50%;
                   }
                 }
-                &.bottom{
+                &.bottom {
                   top: 85%;
                   right: 5%;
                   width: 1%;
@@ -327,15 +320,15 @@ $animationtime: 5s;
                   animation: icon8moonbottom $animationtime ease 0s infinite;
                 }
               }
-              
-              & .planet{
+
+              & .planet {
                 top: 25%;
                 left: 24%;
                 width: 63%;
                 height: 63%;
               }
-              
-              & .ring{
+
+              & .ring {
                 top: 45%;
                 left: 15%;
                 width: 80%;
@@ -345,7 +338,7 @@ $animationtime: 5s;
                 transform: rotate(17deg);
                 overflow: visible;
                 animation: icon8ring $animationtime ease 0s infinite alternate;
-                &:after{
+                &:after {
                   top: 80%;
                   left: 22%;
                   width: 10%;
@@ -355,16 +348,17 @@ $animationtime: 5s;
                   transform: rotate(45deg);
                 }
               }
-              
-              & .planetoid{
+
+              & .planetoid {
                 top: 25%;
                 left: 70%;
                 width: 20%;
                 height: 20%;
                 overflow: visible;
                 background: $dark;
-                animation: icon8planetoid $animationtime linear 0s infinite reverse;
-                &:before{
+                animation: icon8planetoid $animationtime linear 0s infinite
+                  reverse;
+                &:before {
                   top: -25%;
                   left: -25%;
                   width: 150%;
@@ -375,7 +369,7 @@ $animationtime: 5s;
                   transform: rotate(55deg);
                   background: transparent;
                 }
-                &:after{
+                &:after {
                   top: -40%;
                   left: 50%;
                   width: 20%;
@@ -386,18 +380,16 @@ $animationtime: 5s;
                   background: transparent;
                 }
               }
-              
             }
-            &.icon15{
-      
-              & .planetoid{
+            &.icon15 {
+              & .planetoid {
                 top: 10%;
                 left: 20%;
                 width: 10%;
                 height: 10%;
                 overflow: visible;
                 animation: icon15planetoid $animationtime linear 0s infinite;
-                &:before{
+                &:before {
                   top: 110%;
                   left: -60%;
                   width: 1%;
@@ -406,50 +398,52 @@ $animationtime: 5s;
                   border-radius: 50%;
                 }
               }
-              
-              & .sattelite{
+
+              & .sattelite {
                 top: 20%;
                 left: 10%;
                 width: 100%;
                 height: 70%;
                 transform: rotate(-45deg);
                 border: 0;
-                animation: icon15sattelite $animationtime linear 0s infinite alternate;
-                
-                & .solarpanel{
+                animation: icon15sattelite $animationtime linear 0s infinite
+                  alternate;
+
+                & .solarpanel {
                   top: 15%;
                   width: 30%;
                   height: 30%;
                   overflow: visible;
-                  animation: icon15solarpanel $animationtime*2 linear 0s infinite alternate;
-                  &:after{
+                  animation: icon15solarpanel $animationtime * 2 linear 0s
+                    infinite alternate;
+                  &:after {
                     top: 50%;
                     height: 1%;
                     width: 125%;
                     @include bordered();
                     border-color: $gold transparent transparent transparent;
                   }
-                  &.left{
+                  &.left {
                     left: 0;
                     background: $dark;
                   }
-                  &.right{
+                  &.right {
                     background: $dark;
                     right: 0;
-                    &:after{
+                    &:after {
                       left: -30%;
                     }
                   }
                 }
-                
-                & .body{
+
+                & .body {
                   background: $dark;
                   top: 0;
                   left: 38%;
                   width: 25%;
                   height: 60%;
                   overflow: visible;
-                  &:after{
+                  &:after {
                     top: 70%;
                     left: -$borderwidth;
                     width: 100%;
@@ -460,8 +454,8 @@ $animationtime: 5s;
                     transform: rotate(45deg);
                   }
                 }
-                
-                & .dish{
+
+                & .dish {
                   background: $dark;
                   top: 76%;
                   left: 40%;
@@ -471,12 +465,14 @@ $animationtime: 5s;
                   border-radius: 50%;
                   transform: rotate(-45deg);
                   overflow: visible;
-                  animation: icon15dish $animationtime linear 0s infinite alternate;
-                  &:before, &:after{
+                  animation: icon15dish $animationtime linear 0s infinite
+                    alternate;
+                  &:before,
+                  &:after {
                     transform-origin: top left;
                     @include bordered();
                   }
-                  &:before{
+                  &:before {
                     left: 10%;
                     top: 10%;
                     width: 110%;
@@ -484,7 +480,7 @@ $animationtime: 5s;
                     border-color: $gold transparent transparent transparent;
                     transform: rotate(45deg);
                   }
-                  &:after{
+                  &:after {
                     left: 50%;
                     top: 50%;
                     width: 20%;
@@ -493,9 +489,7 @@ $animationtime: 5s;
                     transform: rotate(135deg);
                   }
                 }
-                
               }
-              
             }
           }
         }
@@ -529,7 +523,6 @@ $animationtime: 5s;
           font-size: 18px;
           line-height: 1.3;
           display: flex;
-
         }
         > .animation-wrapper {
           div {
@@ -554,7 +547,7 @@ $animationtime: 5s;
           z-index: -1;
           // transform: skew(
           //   30deg
-          //   , 
+          //   ,
           //   0deg
           //   ) translate(-50%, -50%);
           overflow: visible;
@@ -660,16 +653,16 @@ $animationtime: 5s;
                 }
               }
             }
-            &.icon11{
-      
-              & .planet{
+            &.icon11 {
+              & .planet {
                 top: 17.5%;
                 left: 17.5%;
                 width: 65%;
                 height: 65%;
                 overflow: visible;
-                animation: icon11planet $animationtime*2 ease 0s infinite alternate;
-                &:before{
+                animation: icon11planet $animationtime * 2 ease 0s infinite
+                  alternate;
+                &:before {
                   top: -10%;
                   left: 73%;
                   width: 25%;
@@ -679,31 +672,31 @@ $animationtime: 5s;
                   border-color: $gold $gold transparent $gold;
                   transform: rotate(40deg);
                 }
-                
-                & .line{
+
+                & .line {
                   height: 1%;
                   border-color: $gold transparent transparent transparent;
-                  &.line1{
+                  &.line1 {
                     top: 7%;
                     right: 22%;
                     width: 25%;
                   }
-                  &.line2{
+                  &.line2 {
                     top: 18%;
                     left: 10%;
                     width: 55%;
                   }
-                  &.line3{
+                  &.line3 {
                     top: 30%;
                     left: 3%;
                     width: 94%;
                   }
-                  &.line4{
+                  &.line4 {
                     top: 40%;
                     right: 0;
                     width: 35%;
                     overflow: visible;
-                    &:before{
+                    &:before {
                       top: -$borderwidth;
                       left: -60%;
                       width: 30%;
@@ -712,17 +705,17 @@ $animationtime: 5s;
                       border-color: $gold transparent transparent transparent;
                     }
                   }
-                  &.line5{
+                  &.line5 {
                     top: 50%;
                     left: 0;
                     width: 100%;
                   }
-                  &.line6{
+                  &.line6 {
                     top: 58%;
                     left: 0;
                     width: 28%;
                     overflow: visible;
-                    &:before{
+                    &:before {
                       top: -$borderwidth;
                       left: 130%;
                       width: 30%;
@@ -731,12 +724,12 @@ $animationtime: 5s;
                       border-color: $gold transparent transparent transparent;
                     }
                   }
-                  &.line7{
+                  &.line7 {
                     top: 68%;
                     left: 3%;
                     width: 58%;
                     overflow: visible;
-                    &:before{
+                    &:before {
                       top: -$borderwidth;
                       left: 120%;
                       width: 40%;
@@ -744,7 +737,7 @@ $animationtime: 5s;
                       @include bordered();
                       border-color: $gold transparent transparent transparent;
                     }
-                    &:after{
+                    &:after {
                       margin-top: -15%;
                       left: 100%;
                       padding: 8%;
@@ -752,12 +745,12 @@ $animationtime: 5s;
                       border-radius: 50%;
                     }
                   }
-                  &.line8{
+                  &.line8 {
                     top: 80%;
                     right: 10%;
                     width: 25%;
                     overflow: visible;
-                    &:before{
+                    &:before {
                       top: -0.1vw;
                       left: -70%;
                       width: 30%;
@@ -766,27 +759,24 @@ $animationtime: 5s;
                       border-color: $gold transparent transparent transparent;
                     }
                   }
-                  &.line9{
+                  &.line9 {
                     top: 93%;
                     left: 25%;
                     width: 25%;
                   }
                 }
-                
               }
-              
             }
-            &.icon8{
-      
-              & .moon{
-                &.top{
+            &.icon8 {
+              & .moon {
+                &.top {
                   top: 15%;
                   left: 10%;
                   width: 8%;
                   height: 8%;
                   overflow: visible;
                   animation: icon8moontop $animationtime/2 linear 0s infinite;
-                  &:before{
+                  &:before {
                     top: 120%;
                     left: -30%;
                     width: 1%;
@@ -795,7 +785,7 @@ $animationtime: 5s;
                     border-radius: 50%;
                   }
                 }
-                &.bottom{
+                &.bottom {
                   top: 85%;
                   right: 5%;
                   width: 1%;
@@ -803,15 +793,15 @@ $animationtime: 5s;
                   animation: icon8moonbottom $animationtime ease 0s infinite;
                 }
               }
-              
-              & .planet{
+
+              & .planet {
                 top: 25%;
                 left: 24%;
                 width: 63%;
                 height: 63%;
               }
-              
-              & .ring{
+
+              & .ring {
                 top: 45%;
                 left: 15%;
                 width: 80%;
@@ -821,7 +811,7 @@ $animationtime: 5s;
                 transform: rotate(17deg);
                 overflow: visible;
                 animation: icon8ring $animationtime ease 0s infinite alternate;
-                &:after{
+                &:after {
                   top: 80%;
                   left: 22%;
                   width: 10%;
@@ -831,16 +821,17 @@ $animationtime: 5s;
                   transform: rotate(45deg);
                 }
               }
-              
-              & .planetoid{
+
+              & .planetoid {
                 top: 25%;
                 left: 70%;
                 width: 20%;
                 height: 20%;
                 overflow: visible;
                 background: $dark;
-                animation: icon8planetoid $animationtime linear 0s infinite reverse;
-                &:before{
+                animation: icon8planetoid $animationtime linear 0s infinite
+                  reverse;
+                &:before {
                   top: -25%;
                   left: -25%;
                   width: 150%;
@@ -851,7 +842,7 @@ $animationtime: 5s;
                   transform: rotate(55deg);
                   background: transparent;
                 }
-                &:after{
+                &:after {
                   top: -40%;
                   left: 50%;
                   width: 20%;
@@ -862,18 +853,16 @@ $animationtime: 5s;
                   background: transparent;
                 }
               }
-              
             }
-            &.icon15{
-      
-              & .planetoid{
+            &.icon15 {
+              & .planetoid {
                 top: 10%;
                 left: 20%;
                 width: 10%;
                 height: 10%;
                 overflow: visible;
                 animation: icon15planetoid $animationtime linear 0s infinite;
-                &:before{
+                &:before {
                   top: 110%;
                   left: -60%;
                   width: 1%;
@@ -882,50 +871,52 @@ $animationtime: 5s;
                   border-radius: 50%;
                 }
               }
-              
-              & .sattelite{
+
+              & .sattelite {
                 top: 20%;
                 left: 10%;
                 width: 100%;
                 height: 70%;
                 transform: rotate(-45deg);
                 border: 0;
-                animation: icon15sattelite $animationtime linear 0s infinite alternate;
-                
-                & .solarpanel{
+                animation: icon15sattelite $animationtime linear 0s infinite
+                  alternate;
+
+                & .solarpanel {
                   top: 15%;
                   width: 30%;
                   height: 30%;
                   overflow: visible;
-                  animation: icon15solarpanel $animationtime*2 linear 0s infinite alternate;
-                  &:after{
+                  animation: icon15solarpanel $animationtime * 2 linear 0s
+                    infinite alternate;
+                  &:after {
                     top: 50%;
                     height: 1%;
                     width: 125%;
                     @include bordered();
                     border-color: $gold transparent transparent transparent;
                   }
-                  &.left{
+                  &.left {
                     left: 0;
                     background: $dark;
                   }
-                  &.right{
+                  &.right {
                     background: $dark;
                     right: 0;
-                    &:after{
+                    &:after {
                       left: -30%;
                     }
                   }
                 }
-                
-                & .body{
+
+                & .body {
                   background: $dark;
                   top: 0;
                   left: 38%;
                   width: 25%;
                   height: 60%;
                   overflow: visible;
-                  &:after{
+                  &:after {
                     top: 70%;
                     left: -$borderwidth;
                     width: 100%;
@@ -936,8 +927,8 @@ $animationtime: 5s;
                     transform: rotate(45deg);
                   }
                 }
-                
-                & .dish{
+
+                & .dish {
                   background: $dark;
                   top: 76%;
                   left: 40%;
@@ -947,12 +938,14 @@ $animationtime: 5s;
                   border-radius: 50%;
                   transform: rotate(-45deg);
                   overflow: visible;
-                  animation: icon15dish $animationtime linear 0s infinite alternate;
-                  &:before, &:after{
+                  animation: icon15dish $animationtime linear 0s infinite
+                    alternate;
+                  &:before,
+                  &:after {
                     transform-origin: top left;
                     @include bordered();
                   }
-                  &:before{
+                  &:before {
                     left: 10%;
                     top: 10%;
                     width: 110%;
@@ -960,7 +953,7 @@ $animationtime: 5s;
                     border-color: $gold transparent transparent transparent;
                     transform: rotate(45deg);
                   }
-                  &:after{
+                  &:after {
                     left: 50%;
                     top: 50%;
                     width: 20%;
@@ -969,219 +962,520 @@ $animationtime: 5s;
                     transform: rotate(135deg);
                   }
                 }
-                
               }
-              
             }
           }
         }
-
-
       }
     }
   }
 }
 
-@keyframes icon1moontop{
-  0% {top: 10%;right: 5%;z-index:0;}
-  49% {top: 60%;right: 95%;z-index:0;}
-  50% {top: 60%;right: 95%;z-index:1;}
-  99% {top: 10%;right: 5%;z-index:1;}
-  100% {top: 10%;right: 5%;z-index:0;}
+@keyframes icon1moontop {
+  0% {
+    top: 10%;
+    right: 5%;
+    z-index: 0;
+  }
+  49% {
+    top: 60%;
+    right: 95%;
+    z-index: 0;
+  }
+  50% {
+    top: 60%;
+    right: 95%;
+    z-index: 1;
+  }
+  99% {
+    top: 10%;
+    right: 5%;
+    z-index: 1;
+  }
+  100% {
+    top: 10%;
+    right: 5%;
+    z-index: 0;
+  }
 }
-@keyframes icon1moonbottom{
-  0% {top: 75%;left: 15%;z-index:0;}
-  49% {top: 40%;left: 95%;z-index:0;}
-  50% {top: 40%;left: 95%;z-index:-1;}
-  99% {top: 75%;left: 15%;z-index:-1;}
-  100% {top: 75%;left: 15%;z-index:0;}
-}
-
-@keyframes icon2planetoid{
-  0% {top: 15%;left: 90%;transform:rotate(0deg);z-index:0;}
-  49% {top: 80%;left: 5%;transform:rotate(720deg);z-index:0;}
-  50% {top: 80%;left: 5%;transform:rotate(720deg);z-index:1;}
-  99% {top: 15%;left: 90%;transform:rotate(1440deg);z-index:1;}
-  100% {top: 15%;left: 90%;transform:rotate(1440deg);z-index:0;}
-}
-@keyframes icon2ring{
-  0% {transform:rotate(-10deg);}
-  100% {transform:rotate(-30deg);}
-}
-
-@keyframes icon3hood{
-  0% {transform:rotate(10deg);}
-  100% {transform:rotate(-10deg);}
-}
-@keyframes icon3middle{
-  0% {transform:rotate(0deg);}
-  100% {transform:rotate(-360deg);}
-}
-
-@keyframes icon4planet{
-  0% {transform:rotate(0deg);}
-  100% {transform:rotate(360deg);}
-}
-
-@keyframes icon5body{
-  0% {top:0%;left:15%;}
-  100% {top:0.5%;left:15.5%;}
-}
-@keyframes icon5line1{
-  0% {top:60%;left:4%;}
-  100% {top:60.5%;left:4.5%;}
-}
-@keyframes icon5line2{
-  0% {top:50%;left:5.5%;}
-  100% {top:50.5%;left:6%;}
-}
-@keyframes icon5line3{
-  0% {top:80%;left:17%;}
-  100% {top:80.5%;left:17.5%;}
+@keyframes icon1moonbottom {
+  0% {
+    top: 75%;
+    left: 15%;
+    z-index: 0;
+  }
+  49% {
+    top: 40%;
+    left: 95%;
+    z-index: 0;
+  }
+  50% {
+    top: 40%;
+    left: 95%;
+    z-index: -1;
+  }
+  99% {
+    top: 75%;
+    left: 15%;
+    z-index: -1;
+  }
+  100% {
+    top: 75%;
+    left: 15%;
+    z-index: 0;
+  }
 }
 
-@keyframes icon6moontop{
-  0% {top: 15%;left: 10%;z-index:0;}
-  49% {top: 60%;left: 95%;z-index:0;}
-  50% {top: 60%;left: 95%;z-index:1;}
-  99% {top: 15%;left: 10%;z-index:1;}
-  100% {top: 15%;left: 10%;z-index:0;}
+@keyframes icon2planetoid {
+  0% {
+    top: 15%;
+    left: 90%;
+    transform: rotate(0deg);
+    z-index: 0;
+  }
+  49% {
+    top: 80%;
+    left: 5%;
+    transform: rotate(720deg);
+    z-index: 0;
+  }
+  50% {
+    top: 80%;
+    left: 5%;
+    transform: rotate(720deg);
+    z-index: 1;
+  }
+  99% {
+    top: 15%;
+    left: 90%;
+    transform: rotate(1440deg);
+    z-index: 1;
+  }
+  100% {
+    top: 15%;
+    left: 90%;
+    transform: rotate(1440deg);
+    z-index: 0;
+  }
 }
-@keyframes icon6moonbottom{
-  0% {top: 85%;left: 95%;z-index:0;}
-  49% {top: 40%;left: 5%;z-index:0;}
-  50% {top: 40%;left: 5%;z-index:-1;}
-  99% {top: 85%;left: 95%;z-index:-1;}
-  100% {top: 85%;left: 95%;z-index:0;}
-}
-@keyframes icon6ring{
-  0% {transform:rotate(10deg);}
-  100% {transform:rotate(30deg);}
-}
-@keyframes icon6ringplanet{
-  0% {transform:rotate(0deg);}
-  100% {transform:rotate(360deg);}
-}
-
-@keyframes icon7telescope{
-  0% {transform:rotate(-10deg);}
-  100% {transform:rotate(-30deg);}
-}
-
-@keyframes icon8moontop{
-  0% {transform:rotate(0deg);}
-  100% {transform:rotate(360deg);}
-}
-@keyframes icon8moonbottom{
-  0% {top: 85%;left: 95%;z-index:0;}
-  49% {top: 40%;left: 5%;z-index:0;}
-  50% {top: 40%;left: 5%;z-index:-1;}
-  99% {top: 85%;left: 95%;z-index:-1;}
-  100% {top: 85%;left: 95%;z-index:0;}
-}
-@keyframes icon8ring{
-  0% {transform:rotate(30deg);}
-  100% {transform:rotate(10deg);}
-}
-@keyframes icon8planetoid{
-  0% {transform:rotate(0deg);}
-  100% {transform:rotate(360deg);}
+@keyframes icon2ring {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
 }
 
-@keyframes icon9planetoid{
-  0% {transform:rotate(0deg);}
-  100% {transform:rotate(360deg);}
+@keyframes icon3hood {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+@keyframes icon3middle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 
-@keyframes icon10orbit{
-  0% {transform:rotate(0deg);}
-  100% {transform:rotate(360deg);}
-}
-@keyframes icon10planet{
-  0% {transform:scale(1);}
-  100% {transform:scale(1.25);}
-}
-
-@keyframes icon11planet{
-  0% {transform:rotate(10deg);}
-  100% {transform:rotate(-10deg);}
+@keyframes icon4planet {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-@keyframes icon12planet{
-  0% {top:25%;left:10%;}
-  100% {top:25.5%;left:10.5%;}
+@keyframes icon5body {
+  0% {
+    top: 0%;
+    left: 15%;
+  }
+  100% {
+    top: 0.5%;
+    left: 15.5%;
+  }
 }
-@keyframes icon12line1{
-  0% {top:32%;left:22%;}
-  100% {top:32.5%;left:22.5%;}
+@keyframes icon5line1 {
+  0% {
+    top: 60%;
+    left: 4%;
+  }
+  100% {
+    top: 60.5%;
+    left: 4.5%;
+  }
 }
-@keyframes icon12line2{
-  0% {top:63%;left:25%;}
-  100% {top:63.5%;left:25.5%;}
+@keyframes icon5line2 {
+  0% {
+    top: 50%;
+    left: 5.5%;
+  }
+  100% {
+    top: 50.5%;
+    left: 6%;
+  }
 }
-@keyframes icon12line3{
-  0% {top:63%;left:42%;}
-  100% {top:63.5%;left:42.5%;}
-}
-@keyframes icon12line4{
-  0% {top:67%;left:55%;}
-  100% {top:67.5%;left:55.5%;}
-}
-@keyframes icon12line5{
-  0% {top:80%;left:65%;}
-  100% {top:81%;left:66%;}
-}
-
-@keyframes icon13moonbottom{
-  0% {top: 85%;left: 95%;z-index:0;}
-  49% {top: 10%;left: 5%;z-index:0;}
-  50% {top: 10%;left: 5%;z-index:-1;}
-  99% {top: 85%;left: 95%;z-index:-1;}
-  100% {top: 85%;left: 95%;z-index:0;}
-}
-@keyframes icon13ring{
-  0% {transform:rotate(10deg);}
-  100% {transform:rotate(30deg);}
-}
-@keyframes icon13click{
-  0% {transform:scaley(1);}
-  100% {transform:scaley(0);}
-}
-
-@keyframes icon14lineleft{
-  0% {transform:rotate(-5deg);}
-  100% {transform:rotate(5deg);}
-}
-@keyframes icon14lineright{
-  0% {transform:rotate(-5deg);}
-  100% {transform:rotate(5deg);}
-}
-@keyframes icon14planet{
-  0% {transform:rotate(10deg);}
-  100% {transform:rotate(20deg);}
-}
-@keyframes icon14ring{
-  0% {transform:rotate(30deg);}
-  100% {transform:rotate(10deg);}
-}
-@keyframes icon14moon{
-  0% {left:5%;}
-  100% {left:95%;}
+@keyframes icon5line3 {
+  0% {
+    top: 80%;
+    left: 17%;
+  }
+  100% {
+    top: 80.5%;
+    left: 17.5%;
+  }
 }
 
-@keyframes icon15sattelite{
-  0% {transform:rotate(-40deg);}
-  100% {transform:rotate(-50deg);}
+@keyframes icon6moontop {
+  0% {
+    top: 15%;
+    left: 10%;
+    z-index: 0;
+  }
+  49% {
+    top: 60%;
+    left: 95%;
+    z-index: 0;
+  }
+  50% {
+    top: 60%;
+    left: 95%;
+    z-index: 1;
+  }
+  99% {
+    top: 15%;
+    left: 10%;
+    z-index: 1;
+  }
+  100% {
+    top: 15%;
+    left: 10%;
+    z-index: 0;
+  }
 }
-@keyframes icon15planetoid{
-  0% {transform:rotate(0deg);}
-  100% {transform:rotate(360deg);}
+@keyframes icon6moonbottom {
+  0% {
+    top: 85%;
+    left: 95%;
+    z-index: 0;
+  }
+  49% {
+    top: 40%;
+    left: 5%;
+    z-index: 0;
+  }
+  50% {
+    top: 40%;
+    left: 5%;
+    z-index: -1;
+  }
+  99% {
+    top: 85%;
+    left: 95%;
+    z-index: -1;
+  }
+  100% {
+    top: 85%;
+    left: 95%;
+    z-index: 0;
+  }
 }
-@keyframes icon15solarpanel{
-  0% {transform:scaley(1);}
-  100% {transform:scaley(0.75);}
+@keyframes icon6ring {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
 }
-@keyframes icon15dish{
-  0% {transform:rotate(-60deg);}
-  100% {transform:rotate(-30deg);}
+@keyframes icon6ringplanet {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes icon7telescope {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+@keyframes icon8moontop {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes icon8moonbottom {
+  0% {
+    top: 85%;
+    left: 95%;
+    z-index: 0;
+  }
+  49% {
+    top: 40%;
+    left: 5%;
+    z-index: 0;
+  }
+  50% {
+    top: 40%;
+    left: 5%;
+    z-index: -1;
+  }
+  99% {
+    top: 85%;
+    left: 95%;
+    z-index: -1;
+  }
+  100% {
+    top: 85%;
+    left: 95%;
+    z-index: 0;
+  }
+}
+@keyframes icon8ring {
+  0% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+@keyframes icon8planetoid {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes icon9planetoid {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes icon10orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes icon10planet {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes icon11planet {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes icon12planet {
+  0% {
+    top: 25%;
+    left: 10%;
+  }
+  100% {
+    top: 25.5%;
+    left: 10.5%;
+  }
+}
+@keyframes icon12line1 {
+  0% {
+    top: 32%;
+    left: 22%;
+  }
+  100% {
+    top: 32.5%;
+    left: 22.5%;
+  }
+}
+@keyframes icon12line2 {
+  0% {
+    top: 63%;
+    left: 25%;
+  }
+  100% {
+    top: 63.5%;
+    left: 25.5%;
+  }
+}
+@keyframes icon12line3 {
+  0% {
+    top: 63%;
+    left: 42%;
+  }
+  100% {
+    top: 63.5%;
+    left: 42.5%;
+  }
+}
+@keyframes icon12line4 {
+  0% {
+    top: 67%;
+    left: 55%;
+  }
+  100% {
+    top: 67.5%;
+    left: 55.5%;
+  }
+}
+@keyframes icon12line5 {
+  0% {
+    top: 80%;
+    left: 65%;
+  }
+  100% {
+    top: 81%;
+    left: 66%;
+  }
+}
+
+@keyframes icon13moonbottom {
+  0% {
+    top: 85%;
+    left: 95%;
+    z-index: 0;
+  }
+  49% {
+    top: 10%;
+    left: 5%;
+    z-index: 0;
+  }
+  50% {
+    top: 10%;
+    left: 5%;
+    z-index: -1;
+  }
+  99% {
+    top: 85%;
+    left: 95%;
+    z-index: -1;
+  }
+  100% {
+    top: 85%;
+    left: 95%;
+    z-index: 0;
+  }
+}
+@keyframes icon13ring {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+@keyframes icon13click {
+  0% {
+    transform: scaley(1);
+  }
+  100% {
+    transform: scaley(0);
+  }
+}
+
+@keyframes icon14lineleft {
+  0% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+@keyframes icon14lineright {
+  0% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+@keyframes icon14planet {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+@keyframes icon14ring {
+  0% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+@keyframes icon14moon {
+  0% {
+    left: 5%;
+  }
+  100% {
+    left: 95%;
+  }
+}
+
+@keyframes icon15sattelite {
+  0% {
+    transform: rotate(-40deg);
+  }
+  100% {
+    transform: rotate(-50deg);
+  }
+}
+@keyframes icon15planetoid {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes icon15solarpanel {
+  0% {
+    transform: scaley(1);
+  }
+  100% {
+    transform: scaley(0.75);
+  }
+}
+@keyframes icon15dish {
+  0% {
+    transform: rotate(-60deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
 }
