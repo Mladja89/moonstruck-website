@@ -88,14 +88,15 @@ const IndexPage = ({ data }) => {
     const sections = [refSlide1, refSlide2].map((ref) => ref.current);
     sections.forEach((panel, i) => {
       if (mobile) {
-        ScrollTrigger.create({
-          trigger: panel,
-          start: "top top",
-          markers: false,
-          pin: true,
-          pinSpacing: false,
-          scrub: true,
-        });
+        // ScrollTrigger.create({
+        //   trigger: panel,
+        //   start: "top top",
+        //   markers: false,
+        //   pin: true,
+        //   pinSpacing: false,
+        //   scrub: true,
+        // });
+        return
       } else {
         ScrollTrigger.create({
           trigger: panel,
@@ -124,10 +125,12 @@ const IndexPage = ({ data }) => {
       {
         opacity: 1,
         backgroundPositionY: "50%",
+        transform: `translateY(${mobile ? "0" : "0"})`
       },
       {
         opacity: 0,
         backgroundPositionY: "110%",
+        transform: `translateY(${mobile ? "50%" : "0"})`,
         scrollTrigger: {
           trigger: element.querySelector(".sec-1"),
           start: "top top",
@@ -143,10 +146,12 @@ const IndexPage = ({ data }) => {
       {
         opacity: 0,
         backgroundPositionY: "50%",
+        transform: `translateY(${mobile ? "0" : "0"})`
       },
       {
         opacity: 1,
         backgroundPositionY: "110%",
+        transform: `translateY(${mobile ? "50%" : "0"})`,
         scrollTrigger: {
           trigger: element.querySelector(".sec-1"),
           start: "top top",

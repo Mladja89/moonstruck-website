@@ -139,7 +139,7 @@ header {
   text-align: center;
   position: relative;
   box-sizing: border-box;
-  overflow: hidden;
+  // overflow: hidden;
   margin: 0 !important;
   padding: 0 !important;
   .sec-wrapper {
@@ -163,6 +163,7 @@ body {
         height: 100%;
         > div {
           height: 100%;
+          background: black;
         }
       }
     }
@@ -812,4 +813,8 @@ body {
       }
     }
   }
+}
+
+.sec-wrapper-2 {
+  // background: black;
 }
