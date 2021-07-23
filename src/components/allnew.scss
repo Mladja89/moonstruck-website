@@ -91,6 +91,9 @@ header {
       }
     }
     .h-right {
+      @media (max-width: 992px) {
+        display: none;
+      }
       display: flex;
       align-items: center;
       margin-left: auto;
@@ -778,6 +781,7 @@ body {
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
+    background: white;
     .content {
       padding-left: 100px;
       padding-right: 100px;
